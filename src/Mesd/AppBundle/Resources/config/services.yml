@@ -1,0 +1,7 @@
+parameters:
+#    mesd_app.example.class: Mesd\AppBundle\Example
+
+services:
+#    mesd_app.example:
+#        class: %mesd_app.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,14 @@
+mesd_app:
+    resource: "@MesdAppBundle/Resources/config/routing.yml"
+    prefix:   /
+
+MesdUserBundle_security:
+    resource: "@MesdUserBundle/Resources/config/routing/security.yml"
+
+MesdUserBundle_registration:
+    resource: "@MesdUserBundle/Resources/config/routing/registration.yml"
+    prefix: /register
+
+MesdUserBundle_reset:
+    resource: "@MesdUserBundle/Resources/config/routing/reset.yml"
+    prefix: /reset

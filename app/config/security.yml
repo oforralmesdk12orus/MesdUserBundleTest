@@ -1,39 +1,36 @@
 security:
     encoders:
-        Symfony\Component\Security\Core\User\User: plaintext
+        Mesd\UserBundle\Model\UserInterface: sha512
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
-        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+        ROLE_SUPER_ADMIN: ROLE_ADMIN
 
     providers:
-        in_memory:
-            memory:
-                users:
-                    user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+        mesd_user:
+            id: mesd_user.user_provider.username
 
     firewalls:
         dev:
-            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+            pattern:  ^/(_(profiler|wdt)|css|images|js|ico)/
             security: false
 
         login:
-            pattern:  ^/demo/secured/login$
-            security: false
+            context:    default_context
+            pattern:    ^/(login$|registration|reset)
+            anonymous:  true
 
-        secured_area:
-            pattern:    ^/demo/secured/
+        main:
+            context:    default_context
+            pattern:    ^/
             form_login:
-                check_path: _security_check
-                login_path: _demo_login
+                csrf_provider:       form.csrf_provider
+                login_path:          MesdUserBundle_login
+                check_path:          MesdUserBundle_check
+                default_target_path: _welcome
             logout:
-                path:   _demo_logout
-                target: _demo
-            #anonymous: ~
-            #http_basic:
-            #    realm: "Secured Demo Area"
+                path:   MesdUserBundle_logout
+                target: MesdUserBundle_login
 
-    access_control:
-        - { path: ^/demo/secured/hello/admin/, roles: ROLE_ADMIN }
-        #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
+    #access_control:
+        #- { path: ^/admin, roles: ROLE_ADMIN }

@@ -67,3 +67,7 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+mesd_user:
+    user_class: Mesd\AppBundle\Entity\User
+    role_class: Mesd\AppBundle\Entity\Role

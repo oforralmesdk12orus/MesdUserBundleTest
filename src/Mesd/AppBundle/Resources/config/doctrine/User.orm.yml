@@ -1,0 +1,30 @@
+Mesd\AppBundle\Entity\User:
+    type:  entity
+    table: mesd_app_user
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+
+    manyToMany:
+        roles:
+            targetEntity: Role
+            joinTable:
+                name: mesd_app_user_role
+                joinColumns:
+                    user_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    role_id:
+                        referencedColumnName: id
+        groups:
+            targetEntity: Group
+            joinTable:
+                name: mesd_app_user_group
+                joinColumns:
+                    user_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    group_id:
+                        referencedColumnName: id

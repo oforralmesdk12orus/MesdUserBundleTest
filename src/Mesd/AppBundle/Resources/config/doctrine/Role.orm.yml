@@ -1,0 +1,8 @@
+Mesd\AppBundle\Entity\Role:
+    type:  entity
+    table: mesd_app_role
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO

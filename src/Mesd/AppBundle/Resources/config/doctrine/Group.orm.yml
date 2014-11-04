@@ -1,0 +1,20 @@
+Mesd\AppBundle\Entity\Group:
+    type:  entity
+    table: mesd_app_group
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+
+    manyToMany:
+        roles:
+            targetEntity: Role
+            joinTable:
+                name: mesd_app_group_role
+                joinColumns:
+                    group_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    role_id:
+                        referencedColumnName: id
