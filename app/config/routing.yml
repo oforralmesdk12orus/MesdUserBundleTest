@@ -12,3 +12,7 @@ MesdUserBundle_registration:
 MesdUserBundle_reset:
     resource: "@MesdUserBundle/Resources/config/routing/reset.yml"
     prefix: /reset
+
+MesdAppBundle_user:
+    resource: "@MesdAppBundle/Resources/config/routing/user.yml"
+    prefix:   /user

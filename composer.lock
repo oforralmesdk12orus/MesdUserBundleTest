@@ -793,12 +793,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/MESD/UserBundle.git",
-                "reference": "1f6635b2736e60a7a9f504407d2e4a4af92c1d1c"
+                "reference": "10531a7d9ac1c7b7294f167dbe9a0590e659f6a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MESD/UserBundle/zipball/1f6635b2736e60a7a9f504407d2e4a4af92c1d1c",
-                "reference": "1f6635b2736e60a7a9f504407d2e4a4af92c1d1c",
+                "url": "https://api.github.com/repos/MESD/UserBundle/zipball/10531a7d9ac1c7b7294f167dbe9a0590e659f6a5",
+                "reference": "10531a7d9ac1c7b7294f167dbe9a0590e659f6a5",
                 "shasum": ""
             },
             "require": {
@@ -838,7 +838,7 @@
                 "source": "https://github.com/MESD/UserBundle/tree/master",
                 "issues": "https://github.com/MESD/UserBundle/issues"
             },
-            "time": "2014-11-04 00:32:14"
+            "time": "2014-11-04 17:37:18"
         },
         {
             "name": "monolog/monolog",
